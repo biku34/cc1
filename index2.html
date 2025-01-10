@@ -34,38 +34,59 @@
             text-transform: uppercase;
         }
         .dashboard-container {
-            margin: 20px auto;
-            max-width: 800px;
+            margin: 50px auto;
+            max-width: 600px;
             background: #fff;
             color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        .Welcome {
-            font-family: 'Satisfy', cursive; /* Same font as the navbar brand */
-        }
-        .dashboard-container h2 {
-            color: #ff4d6d;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .button-container {
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
+            flex-direction: column;
+            align-items: center;
         }
-
-        .button-container .btn-custom {
-            flex: 1 0 45%; /* Makes each button take up 45% width on larger screens */
-            max-width: 200px;
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profile-info {
             text-align: center;
         }
-        .profile-detail {
-            margin-bottom: 15px;
+        .profile-info h2 {
+            font-family: 'Satisfy', cursive;
+            font-size: 2rem;
+            color: #ff4d6d;
+            margin-bottom: 10px;
+        }
+        .profile-info p {
+            margin: 5px 0;
+            font-size: 1rem;
+            color: #555;
+        }
+        .profile-details {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .profile-details .detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 15px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .profile-details .detail strong {
+            color: #ff4d6d;
         }
         .footer {
             background-color: #333;
@@ -73,27 +94,7 @@
             text-align: center;
             font-size: 0.9rem;
             padding: 15px 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-        .footer.fixed-bottom {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-        }
-        .image-container {
-            display: flex;
-            justify-content: center; /* Aligns the image horizontally in the center */
-            align-items: center; /* Aligns the image vertically in the center */
-            margin-bottom: 20px; /* Adds space below the image */
-        }
-
-        .image-container img {
-            max-width: 50%; /* Ensures the image doesn't overflow its container */ /* Maintains the aspect ratio */
+            margin-top: auto;
         }
     </style>
 </head>
@@ -104,7 +105,7 @@
             <a class="navbar-brand" href="#">CollegeCupid</a>
             <div class="ms-auto">
                 <form action="logout.php" method="POST">
-                    <button type="submit" class="btn btn-custom">Logout</button>
+                    <button type="submit" class="btn btn-light">Logout</button>
                 </form>
             </div>
         </div>
@@ -112,45 +113,44 @@
 
     <!-- Dashboard -->
     <div class="dashboard-container">
-        <h2 class="Welcome">Welcome, John Doe!</h2>
-        <div class="image-container">
+        <!-- Profile Image -->
+        <div class="profile-image">
             <img src="bg2.png" alt="Profile Image">
         </div>
-        <div class="profile-detail"><strong>Name:</strong> John Doe</div>
-        <div class="profile-detail"><strong>Age:</strong> 22</div>
-        <div class="profile-detail"><strong>University:</strong> National Forensic Sciences University</div>
-        <div class="profile-detail"><strong>Bio:</strong> A passionate individual who loves exploring new things.</div>
 
-        <!-- Music Preferences -->
-        <div class="profile-detail">
-            <strong>Music Preferences:</strong> Rock, Pop, EDM
+        <!-- Profile Info -->
+        <div class="profile-info">
+            <h2>John Doe</h2>
+            <p>Age: 22</p>
+            <p>University: National Forensic Sciences University</p>
         </div>
 
-        <!-- Movie Preferences -->
-        <div class="profile-detail">
-            <strong>Movie Preferences:</strong> Action, Sci-Fi, Drama
-        </div>
-
-        <!-- Hobbies -->
-        <div class="profile-detail">
-            <strong>Hobbies:</strong> Reading, Traveling, Photography
-        </div>
-
-        <!-- Reading Preferences -->
-        <div class="profile-detail">
-            <strong>Reading Preferences:</strong> Fiction, Non-fiction, Science Fiction
-        </div>
-
-        <!-- Partner Preferences -->
-        <div class="profile-detail">
-            <strong>Partner Preferences:</strong> Someone who is understanding and adventurous.
-        </div>
-
-        <div class="button-container">
-            <a href="likes.php" class="btn btn-custom">Liked By</a>
-            <a href="profile.php" class="btn btn-custom">View Profiles</a>
-            <a href="edit_profile.php" class="btn btn-custom">Edit Profile</a>
-            <a href="profile.php" class="btn btn-custom">Mutual Likes</a>
+        <!-- Profile Details -->
+        <div class="profile-details">
+            <div class="detail">
+                <strong>Bio:</strong>
+                <span>A passionate individual who loves exploring new things.</span>
+            </div>
+            <div class="detail">
+                <strong>Music:</strong>
+                <span>Rock, Pop, EDM</span>
+            </div>
+            <div class="detail">
+                <strong>Movies:</strong>
+                <span>Action, Sci-Fi, Drama</span>
+            </div>
+            <div class="detail">
+                <strong>Hobbies:</strong>
+                <span>Reading, Traveling, Photography</span>
+            </div>
+            <div class="detail">
+                <strong>Reading:</strong>
+                <span>Fiction, Non-fiction, Science Fiction</span>
+            </div>
+            <div class="detail">
+                <strong>Partner Preferences:</strong>
+                <span>Someone who is understanding and adventurous.</span>
+            </div>
         </div>
     </div>
 
