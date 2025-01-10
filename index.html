@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollegeCupid - Blind Dating Platform</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ff4d6d;
+            color: #333;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar {
+            background-color: #ff4d6d;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to distinguish it from the section */
+            z-index: 1000; /* Ensures the navbar stays above other content */
+            position: sticky; /* Keeps the navbar at the top while scrolling */
+            top: 0;
+            width: 100%;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: #fff !important;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+        .nav-link {
+            color: #fff !important;
+            font-weight: 500;
+        }
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #ff4d6d;
+            color: white;
+            font-family: 'Satisfy', cursive;
+        }
+        .hero-section h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .form-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 600px;
+            flex: 1;
+        }
+        .form-container h2 {
+            color: #ff4d6d;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        .btn-custom {
+            background-color: #ff4d6d;
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 0;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #ff3366;
+        }
+        .toggle-text {
+            cursor: pointer;
+            color: #ff4d6d;
+            font-weight: 600;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 15px 0;
+            position: relative;
+        }
+        #login-panel + .footer.fixed-bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        .hero-section img {
+            width: 100%;
+            max-width: 250px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .form-control, .form-select {
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+        .btn-custom {
+            background-color: #ff4d6d;
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #ff3366;
+            color: #fff;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center; /* Aligns the image horizontally in the center */
+            align-items: center; /* Aligns the image vertically in the center */
+            margin-bottom: 20px; /* Adds space below the image */
+        }
+
+        .image-container img {
+            max-width: 50%; /* Ensures the image doesn't overflow its container */ /* Maintains the aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">CollegeCupid</a>
+            <div class="d-flex">
+                <!-- Replace logout button with an About button -->
+                <a href="about.html" class="btn btn-custom">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>Find Meaningful Connections!</h1>
+        <p>Connect over a badminton match!</p>
+        <img src="bg.png" alt="Hero Image">
+        <p><h4>Rediscover the joy of genuine conversations.  <br>
+            Real people connecting over a badminton match.</h4></p>
+    </section>
+    <div class="image-container">
+        <img src="bg2.png" alt="Profile Image">
+    </div>
+    <!-- Form Section -->
+    <div class="form-container">
+        <!-- Login Panel -->
+        <div id="login-panel">
+            <h2>Login</h2>
+            <form action="login.php" method="POST">
+                <div class="mb-3">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required />
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required />
+                </div>
+                <button type="submit" class="btn btn-custom w-100">Login</button>
+            </form>            
+            <span class="toggle-text" onclick="toggleForm()">Don't have an account? Register here</span>
+        </div>
+
+        <!-- Extended Registration Panel -->
+        <div id="register-panel" style="display: none;">
+            <h2>Register</h2>
+            <form action="registration.php" method="POST">
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="name" placeholder="Full Name" required />
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required />
+                </div>
+                <div class="mb-3">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required />
+                </div>
+                <div class="mb-3">
+                    <input type="tel" class="form-control" name="contact" placeholder="Contact Number" required />
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" name="university" id="university" placeholder="University" required>
+                        <option value="">Select University</option>
+                        <option value="NFSU">National Forensic Sciences University (NFSU)</option>
+                        <option value="DAIICT">DAIICT</option>
+                        <option value="KU">Karnavati University (KU)</option>
+                        <option value="Nirma University">Nirma University</option>
+                        <option value="PDEU">PDEU</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" name="age" required>
+                        <option value="">Select Age</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <select class="form-select" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-custom w-100">Register</button>
+            </form>            
+            <span class="toggle-text" onclick="toggleForm()">Already have an account? Login here</span>
+        </div>
+    </div>
+    <div class="image-container">
+        <img src="bg2.png" alt="Profile Image">
+    </div>
+    <section class="hero-section">
+        <h1>Why CollegeCupid ?</h1>
+        <p>In today’s fast-paced, digital world, meeting new people often feels transactional. 
+            CollegeCupid is about slowing down and sharing meaningful conversations.
+            It’s about connecting without expectations—just two people, a quick badminton match,
+            and the chance to learn something new about each other.</p>
+    </section>
+    <div class="image-container">
+        <img src="bg2.png" alt="Profile Image">
+    </div>
+    <section class="hero-section">
+        <h1>How it works ? </h1>
+        <p></p><hr>
+        <h4>Register with Us</h4>
+        <p>Sign up and share a few details about yourself, including your interests, hobbies, and what you're looking for in a connection.</p>
+        <hr><h4>We Match You</h4>
+        <p>Using your preferences, we find people with similar interests who share your enthusiasm for badminton and meaningful conversations.</p>
+        <hr><h4>Get Notified</h4>
+        <p>Once a match is found, we’ll notify you to schedule a friendly badminton game over the weekend.</p>
+        <hr><h4>Play, Connect, and Bond</h4>
+        <p>Badminton isn’t just about the game; it’s a fun and energetic way to break the ice, discover shared interests, and spark deeper conversations. As you play, you’ll not only enjoy the thrill of the match but also create opportunities for more meaningful connections.</p>
+    <hr></section>
+
+    
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <p>&copy; 2024 Bikram Sadhukhan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript for Form Toggle -->
+    <script>
+        function toggleForm() {
+            const loginPanel = document.getElementById('login-panel');
+            const registerPanel = document.getElementById('register-panel');
+            const footer = document.getElementById('footer');
+
+            if (loginPanel.style.display === 'none') {
+                loginPanel.style.display = 'block';
+                registerPanel.style.display = 'none';
+                footer.classList.add('fixed-bottom');
+            } else {
+                loginPanel.style.display = 'none';
+                registerPanel.style.display = 'block';
+                footer.classList.remove('fixed-bottom');
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - CollegeCupid</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ff4d6d;
+            color: #333;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background-color: #ff4d6d;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow to distinguish it from the section */
+            position: sticky; /* Keeps the navbar at the top while scrolling */
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: #fff !important;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: #ff4d6d;
+            color: white;
+            font-family: 'Satisfy', cursive;
+        }
+
+        .hero-section h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        .about-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 600px;
+            flex: 1;
+        }
+
+        .about-container h2 {
+            color: #ff4d6d;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .about-container p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        #footer.fixed-bottom {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .btn-custom {
+            background-color: #ff4d6d;
+            color: #fff;
+            font-weight: 600;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn-custom:hover {
+            background-color: #ff3366;
+            color: #fff;
+        }
+
+        /* Make everything responsive */
+        @media (max-width: 576px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .about-container {
+                padding: 20px;
+            }
+
+            .about-container h2 {
+                font-size: 1.6rem;
+            }
+
+            .about-container p {
+                font-size: 0.95rem;
+            }
+        }
+        .image-container {
+            display: flex;
+            justify-content: center; /* Aligns the image horizontally in the center */
+            align-items: center; /* Aligns the image vertically in the center */
+            margin-bottom: 20px; /* Adds space below the image */
+        }
+
+        .image-container img {
+            max-width: 50%; /* Ensures the image doesn't overflow its container */ /* Maintains the aspect ratio */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">CollegeCupid</a>
+            <div class="d-flex">
+                <!-- Replace logout button with an About button -->
+                <a href="index.html" class="btn btn-custom">Home</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <div class="about-container">
+        <h2>About Us</h2>
+        <div class="image-container">
+            <img src="bg2.png" alt="Profile Image">
+        </div>
+        <p>
+            CollegeCupid is an innovative social networking platform currently under development, designed to help college students connect and find meaningful connections over a badminton match.
+        </p>
+        <p>
+            The platform is in its building phase, and we are working hard to bring a user-friendly and exciting experience for students from various universities.
+        </p>
+        <p>
+            Developed by: <strong>Bikram Sadhukhan</strong>
+        </p>
+        <p>
+            <strong>Contact:</strong> <a href="mailto:bikramsadhukhan505@gmail.com">bikramsadhukhan505@gmail.com</a>
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <p>&copy; 2024 Bikram Sadhukhan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
